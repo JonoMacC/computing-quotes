@@ -35,7 +35,7 @@ const renderQuotes = (quotes = []) => {
       const personName = await getAuthorNameById(quote.personId);
       newQuote.className = "single-quote";
       newQuote.innerHTML = `<div class="quote-text">${quote.quote}</div>
-      <div class="attribution">- ${personName}, ${quote.year}</div>`;
+      <div class="attribution"><span>- ${personName}</span><span>${quote.year}</span></div>`;
       quoteContainer.appendChild(newQuote);
     });
   } else {
@@ -54,14 +54,6 @@ fetchAllButton.addEventListener("click", () => {
     })
     .then((response) => {
       const quotes = response.quotes;
-      // const authors = [];
-      // quotes.forEach((quote) => {
-      //   getAuthorById(quote.personId).then((author) => {
-      //     authors.push(author);
-      //   });
-      // });
-      // console.log(quotes);
-      // console.log(authors);
       renderQuotes(quotes);
     });
 });
@@ -81,8 +73,8 @@ fetchRandomButton.addEventListener("click", () => {
 });
 
 fetchByAuthorButton.addEventListener("click", () => {
-  const author = document.getElementById("author").value;
-  fetch(`/api/quotes?person=${author}`)
+  const authorName = document.getElementById("author").value;
+  fetch(`/api/quotes?person=${authorName}`)
     .then((response) => {
       if (response.ok) {
         return response.json();

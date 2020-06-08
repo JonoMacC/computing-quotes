@@ -158,6 +158,7 @@ const quotes = [
     quote:
       "Understand well as I may, my comprehension can only be an infinitesimal fraction of all I want to understand.",
     personId: 4,
+    year: "",
   },
   {
     id: 7,

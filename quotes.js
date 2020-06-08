@@ -16,9 +16,10 @@ quotesRouter.get("/random", (req, res) => {
 // if person is defined, return their quotes
 // otherwise return all quotes
 quotesRouter.get("/", (req, res) => {
-  if (req.query.person !== undefined) {
+  const author = authors.find((author) => author.name === req.query.person);
+  if (req.query.person !== undefined && author !== undefined) {
     const quotesByPerson = quotes.filter(
-      (quote) => quote.person === req.query.person
+      (quote) => quote.personId === author.id
     );
     res.send({
       quotes: quotesByPerson,
@@ -34,14 +35,14 @@ quotesRouter.get("/", (req, res) => {
 quotesRouter.post("/", (req, res) => {
   const newQuote = {
     id: quotes.length + 1,
-    quote: req.params.quote,
-    year: req.params.year,
+    quote: req.query.quote,
+    year: req.query.year,
   };
 
-  if (newQuote.quote && req.params.person) {
+  if (newQuote.quote && req.query.person) {
     // Check if person is in the list of authors
     const authorIndex = authors.findIndex(
-      (author) => author.name === req.params.person
+      (author) => author.name === req.query.person
     );
     if (authorIndex !== -1) {
       newQuote.personId = authors[authorIndex].id;

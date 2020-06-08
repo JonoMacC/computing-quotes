@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-  <title>Quote API</title>
-  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/x-icon"ç href="favicon.ico">
-</head>
-<body>
-  <h1>Quote API</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="add-quote.html">Add a New Quote</a>
-  </nav>
-  <h2>Add a New Quote</h2>
-  <div class="inputs">
-    <label for="quote">Quote text:</label>
-    <input id="quote" value="">
-    <label for="person">Person:</label>
-    <input id="person" value="">
-  </div>
-  <div>
-    <button id="submit-quote">Submit Your Quote</button>
-  </div>
-  <div id="new-quote">
-    
-  </div>
-  <script src="add-quote.js"></script>
-</body>
+  <head>
+    <title>computing quotes - add a quote</title>
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="reset.css" type="text/css" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  </head>
+  <body class="quote-form-container">
+    <div id="quote-form">
+      <header>
+        <span>add quote</span>
+        <button id="close" class="icon">
+          <a href="index.html">
+            <img src="resources/icons/close.svg" type="image/svg+xml" />
+          </a>
+        </button>
+      </header>
+
+      <!-- Add Quote Form -->
+      <section id="form-body">
+        <section id="quote-text">
+          <label for="quote">Quote</label>
+          <textarea id="quote" name="quote" rows="10"></textarea>
+        </section>
+        <section id="attribution">
+          <section id="author-text">
+            <label for="person-choice">Author</label>
+            <input list="person" id="person-choice" name="person-choice" />
+            <datalist id="person">
+              <option value="Ellen Ullman"> </option>
+              <option value="Alan Turing"> </option>
+            </datalist>
+          </section>
+          <section id="year-text">
+            <label for="year">Year</label>
+            <input id="year" />
+          </section>
+        </section>
+
+        <button id="submit-quote">submit quote</button>
+      </section>
+    </div>
+
+    <!-- Add Quote Submission Results -->
+    <div id="new-quote"></div>
+    <script src="add-quote.js"></script>
+  </body>
 </html>

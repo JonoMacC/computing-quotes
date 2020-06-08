@@ -1,32 +1,84 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-  <title>Quote API</title>
-  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <h1>Quote API</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="add-quote.html">Add a New Quote</a>
-  </nav>
-  <h2>Get Quotes</h2>
-  <div class="request-buttons">
-    <div>
-      <button id="fetch-random">Fetch a Random Quote</button>
-      <button id="fetch-quotes">Fetch all Quotes</button>
-    </div>
-    <div>
-      <input id="author" value="">
-      <button id="fetch-by-author">Fetch by Author</button>
-    </div>
-  </div>
-  <div id="quote-container">
-    
-  </div>
-  <script src="script.js"></script>
-</body>
+  <head>
+    <title>computing quotes</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="reset.css" type="text/css" />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  </head>
+  <body class="wrapper">
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html" class="highlight">Quotes</a>
+          <span class="selector"></span>
+        </li>
+        <li><a href="#">Authors</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h1>computer:<span class="highlight">quotes</span></h1>
+
+      <div id="control-bar">
+        <div id="search-bar">
+          <input id="author" placeholder="Search by author" />
+          <button id="fetch-by-author" class="icon">
+            <img src="/resources/icons/search.svg" type="image/svg+xml" />
+          </button>
+        </div>
+        <div id="control-cover"></div>
+      </div>
+
+      <ul id="action-bar">
+        <li>
+          <button id="fetch-random" class="action">
+            <img
+              class="action-icon"
+              src="resources/icons/random.svg"
+              type="image/svg+xml"
+              alt="random quote"
+            />
+            <span class="action-text">random quote</span>
+          </button>
+        </li>
+        <li>
+          <button id="fetch-quotes" class="action wide">all quotes</button>
+        </li>
+        <li><a href="add-quote.html">
+          <button id="add-quote" class="action">
+            <img
+              class="action-icon"
+              src="resources/icons/add.svg"
+              type="image/svg+xml"
+              alt="add quote"
+            />
+            <span class="action-text"
+              >add quote</span
+            ></a>
+          </button>
+        </li>
+      </ul>
+
+      <div id="quote-container"></div>
+      <script src="script.js"></script>
+    </main>
+
+    <footer>
+      <p>
+        Coded with <span class="proportional">♥</span> by
+        <a href="twitter.com/jonmaccaull">Jon MacCaull</a>. See on Github.
+      </p>
+    </footer>
+  </body>
 </html>
