@@ -16,11 +16,11 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   </head>
-  <body class="quote-form-container">
-    <div id="quote-form">
+  <body class="full-height">
+    <div id="quote-form" class="form modal">
       <header>
-        <span>add quote</span>
-        <button id="close" class="icon">
+        <span class="form-title">add quote</span>
+        <button id="close" class="icon right">
           <a href="index.html">
             <img src="resources/icons/close.svg" type="image/svg+xml" />
           </a>
@@ -28,28 +28,36 @@
       </header>
 
       <!-- Add Quote Form -->
-      <section id="form-body">
-        <section id="quote-text">
-          <label for="quote">Quote</label>
+      <ul class="form-body">
+        <li id="quote-text">
+          <label for="quote" class="label">Quote</label>
           <textarea id="quote" name="quote" rows="10"></textarea>
-        </section>
-        <section id="attribution">
-          <section id="author-text">
-            <label for="person-choice">Author</label>
-            <input list="person" id="person-choice" name="person-choice" />
-            <datalist id="person">
-              <option value="Ellen Ullman"> </option>
-              <option value="Alan Turing"> </option>
-            </datalist>
-          </section>
-          <section id="year-text">
-            <label for="year">Year</label>
-            <input id="year" />
-          </section>
-        </section>
-
-        <button id="submit-quote">submit quote</button>
-      </section>
+        </li>
+        <li id="quote-attribution">
+          <ul class="list-horiz">
+            <li id="author-text">
+              <label for="person-choice" class="label">Author</label>
+              <input
+                list="person"
+                id="person-choice"
+                name="person-choice"
+                class="small"
+              />
+              <datalist id="person">
+                <option value="Ellen Ullman"> </option>
+                <option value="Alan Turing"> </option>
+              </datalist>
+            </li>
+            <li id="year-text">
+              <label for="year" class="label">Year</label>
+              <input id="year" class="small" />
+            </li>
+          </ul>
+        </li>
+        <li class="bottom">
+          <button id="submit-quote">submit quote</button>
+        </li>
+      </ul>
     </div>
 
     <!-- Add Quote Submission Results -->

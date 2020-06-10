@@ -31,11 +31,14 @@ const renderQuotes = (quotes = []) => {
   resetQuotes();
   if (quotes.length > 0) {
     quotes.forEach(async (quote) => {
-      const newQuote = document.createElement("div");
+      const newQuote = document.createElement("li");
       const personName = await getAuthorNameById(quote.personId);
       newQuote.className = "single-quote";
-      newQuote.innerHTML = `<div class="quote-text">${quote.quote}</div>
-      <div class="attribution"><span>- ${personName}</span><span>${quote.year}</span></div>`;
+      newQuote.innerHTML = `<p>${quote.quote}</p>
+      <ul class="list-horiz attr">
+        <li>- ${personName}</li>
+        <li>${quote.year}</li>
+      </ul>`;
       quoteContainer.appendChild(newQuote);
     });
   } else {
