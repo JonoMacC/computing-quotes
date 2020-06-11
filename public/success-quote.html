@@ -21,40 +21,20 @@
     <div id="quote-form" class="form modal">
       <ul class="form-body">
         <li id="form-header" class="list-horiz">
-          <span class="form-title">add quote</span>
           <button id="close" class="icon right">
             <a href="index.html">
               <img src="resources/icons/close.svg" type="image/svg+xml" />
             </a>
           </button>
         </li>
-        <li id="quote-text">
-          <label for="quote" class="label">Quote</label>
-          <textarea id="quote" name="quote" rows="10"></textarea>
-        </li>
-        <li id="quote-attribution">
-          <ul class="list-horiz">
-            <li id="author-text">
-              <label for="person-choice" class="label">Author</label>
-              <input
-                list="person"
-                id="person-choice"
-                name="person-choice"
-                class="small"
-              />
-              <datalist id="person">
-                <option value="Ellen Ullman"> </option>
-                <option value="Alan Turing"> </option>
-              </datalist>
-            </li>
-            <li id="year-text">
-              <label for="year" class="label">Year</label>
-              <input id="year" class="small" />
-            </li>
-          </ul>
+        <li id="success">
+          <img src="resources/icons/check.svg" type="image/svg+xml" />
         </li>
         <li>
-          <button id="submit-quote">submit quote</button>
+          <p>Congrats, your quote was added!</p>
+        </li>
+        <li>
+          <button id="submit-quote">return to quotes</button>
         </li>
       </ul>
     </div>
