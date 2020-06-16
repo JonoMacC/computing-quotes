@@ -7,4 +7,4 @@ React Front-End and Express Back-End.
 
 To see the project, clone the repository. From your bash terminal, navigate to the project directory.
 Run <code>node server</code> in the terminal.
-View the site by navigating to **localhost:4001** in your web browser.
+View the site by navigating to **localhost:3000** in your web browser.
