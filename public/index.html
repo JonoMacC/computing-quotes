@@ -1,84 +1,57 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
-    <title>computing quotes</title>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg" />
+    <link rel="alternate icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
 
-    <!-- Fonts -->
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <!-- Link to reset.css, clear out browser defaults -->
+    <link rel="stylesheet" href="reset.css" type="text/css" />
+
+    <!-- Link to styles.css, basic website styling -->
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+
+    <!-- Link to Google Fonts -->
+    <!-- Source Code Pro -->
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="reset.css" type="text/css" />
-    <link rel="stylesheet" href="styles.css" type="text/css" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <title>Computer Quotes</title>
   </head>
-  <body class="wrapper">
-    <nav>
-      <ul class="list-horiz">
-        <li>
-          <a href="index.html" class="label highlight">Quotes</a>
-          <span class="selector"></span>
-        </li>
-        <li><a href="#" class="label">Authors</a></li>
-      </ul>
-    </nav>
-    <main>
-      <h1>computer:<span class="highlight">quotes</span></h1>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
-      <div id="control-bar">
-        <div id="search-bar">
-          <input id="author" placeholder="Search by author" />
-          <button id="fetch-by-author" class="icon">
-            <img src="/resources/icons/search.svg" type="image/svg+xml" />
-          </button>
-        </div>
-        <div id="control-cover"></div>
-      </div>
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
 
-      <ul id="action-bar">
-        <li>
-          <button id="fetch-random" class="action">
-            <img
-              class="action-icon"
-              src="resources/icons/random.svg"
-              type="image/svg+xml"
-              alt="random quote"
-            />
-            <span class="action-text">random quote</span>
-          </button>
-        </li>
-        <li>
-          <button id="fetch-quotes" class="action wide">all quotes</button>
-        </li>
-        <li><a href="add-quote.html">
-          <button id="add-quote" class="action">
-            <img
-              class="action-icon"
-              src="resources/icons/add.svg"
-              type="image/svg+xml"
-              alt="add quote"
-            />
-            <span class="action-text"
-              >add quote</span
-            ></a>
-          </button>
-        </li>
-      </ul>
-
-      <ul id="quote-container"></ul>
-      <script src="script.js"></script>
-    </main>
-
-    <footer>
-      <p>
-        Coded with <span class="proportional">♥</span> by
-        <a href="https://twitter.com/jonmaccaull">Jon MacCaull</a>. See on <a href="https://github.com/JonoMacC/computing-quotes">Github</a>.
-      </p>
-    </footer>
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
   </body>
 </html>

@@ -1,0 +1,12 @@
+.NavItem {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  padding: 0.625rem;
+}
+
+.selected {
+  color: var(--cyberpunk-green);
+}

@@ -1,9 +1,9 @@
 const express = require("express");
 
-const { quotes, authors } = require("./data");
-const { getRandomElement } = require("./utils");
+const { quotes, authors } = require("../data");
+const { getRandomElement } = require("../src/util/utils");
 
-quotesRouter = express.Router();
+const quotesRouter = express.Router();
 
 // Get a random quote
 quotesRouter.get("/random", (req, res) => {
@@ -23,6 +23,14 @@ quotesRouter.get("/", (req, res) => {
     );
     res.send({
       quotes: quotesByPerson,
+    });
+  } else if (
+    req.query.person !== undefined &&
+    req.query.person.length > 0 &&
+    author === undefined
+  ) {
+    res.send({
+      result: "No quotes by that author were found.",
     });
   } else {
     res.send({
@@ -47,7 +55,7 @@ quotesRouter.post("/", (req, res) => {
     if (authorIndex !== -1) {
       newQuote.personId = authors[authorIndex].id;
     } else {
-      res
+      return res
         .status(404)
         .send("Author not found. Add author before posting quotes.");
     }
@@ -58,7 +66,7 @@ quotesRouter.post("/", (req, res) => {
       quote: newQuote,
     });
   } else {
-    res.status(400).send();
+    res.status(400).send("No quote or author.");
   }
 });
 

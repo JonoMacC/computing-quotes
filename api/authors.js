@@ -1,9 +1,9 @@
 const express = require("express");
 
-const { authors } = require("./data");
-const { getRandomElement } = require("./utils");
+const { authors } = require("../data");
+const { getRandomElement } = require("../src/util/utils");
 
-authorsRouter = express.Router();
+const authorsRouter = express.Router();
 
 // Get a random author
 authorsRouter.get("/random", (req, res) => {

@@ -1,0 +1,18 @@
+.NavBar {
+  width: 80%;
+  max-width: 12.375rem;
+  margin: 1rem auto;
+}
+
+.NavBar ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media all and (min-width: 736px) {
+  .NavBar {
+    margin: 2rem auto;
+  }
+}

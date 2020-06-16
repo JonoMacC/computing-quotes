@@ -1,0 +1,68 @@
+.Action {
+  padding: 0.75rem;
+  width: 2.75rem;
+}
+
+.Action.wide {
+  width: auto;
+}
+
+.Action-text {
+  display: none;
+}
+
+.Action-icon {
+  display: block;
+}
+
+.Action-bar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  position: sticky;
+  top: 5rem;
+  margin-top: 6rem;
+  z-index: 10;
+}
+
+@media all and (min-width: 736px) {
+  .Action-bar {
+    top: 6.25rem;
+    margin-top: 9rem;
+  }
+
+  .Action {
+    padding: 0.75rem 2rem;
+    width: auto;
+  }
+
+  .Action-text {
+    display: inline-block;
+  }
+
+  .Action-icon {
+    display: none;
+  }
+}
+
+@media all and (min-width: 1023px) {
+  .Action-bar {
+    flex-flow: column nowrap;
+    float: right;
+    align-items: stretch;
+    margin-top: 2rem;
+    top: 2rem;
+    width: 224px;
+  }
+
+  .Action-bar li {
+    margin-bottom: 2.25rem;
+  }
+
+  .Action,
+  .Action.wide {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0.75rem;
+  }
+}

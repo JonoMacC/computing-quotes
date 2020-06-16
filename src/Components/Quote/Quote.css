@@ -1,0 +1,26 @@
+.Quote {
+  padding: 0.75rem;
+  background: var(--surface-dark);
+  border: 1px solid var(--white-20);
+  margin-bottom: 0.625rem;
+}
+
+.Quote:hover,
+.Quote:focus {
+  background: #485053;
+}
+
+.Attribution {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Attribution > li {
+  margin: 0 2rem 0 0;
+}
+
+.Attribution > li:last-child {
+  margin: 0;
+}
