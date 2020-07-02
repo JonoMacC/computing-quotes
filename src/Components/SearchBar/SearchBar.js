@@ -39,12 +39,19 @@ class SearchBar extends React.Component {
       <div className="Control-bar">
         <div className="Search-bar">
           <input
+            name="author"
             id="author"
+            aria-label="Author name"
             placeholder="Search by author"
             onChange={this.handleTermChange}
             onKeyDown={this.handleKeyDown}
           />
-          <button id="fetch-by-author" className="icon" onClick={this.search}>
+          <button
+            id="fetch-by-author"
+            className="icon"
+            onClick={this.search}
+            aria-label="Search"
+          >
             <SearchIcon />
           </button>
         </div>
