@@ -9,7 +9,15 @@ class ActionBar extends React.Component {
 
     this.fetchRandom = this.fetchRandom.bind(this);
     this.fetchAll = this.fetchAll.bind(this);
-    this.addQuote = this.addQuote.bind(this);
+    this.add = this.add.bind(this);
+  }
+
+  getMode() {
+    if (this.props.quotesMode) {
+      return "quote";
+    } else {
+      return "author";
+    }
   }
 
   fetchRandom() {
@@ -20,8 +28,8 @@ class ActionBar extends React.Component {
     this.props.onFetchAll();
   }
 
-  addQuote() {
-    this.props.onAddQuote();
+  add() {
+    this.props.onAdd();
   }
 
   render() {
@@ -35,24 +43,24 @@ class ActionBar extends React.Component {
           >
             <div>
               <RandomIcon className="Action-icon" />
-              <span className="Action-text">random quote</span>
+              <span className="Action-text">{`random ${this.getMode()}`}</span>
             </div>
           </button>
         </li>
         <li>
           <button
-            id="fetch-quotes"
+            id="fetch-all"
             className="Action wide"
             onClick={this.fetchAll}
           >
-            all quotes
+            {`all ${this.getMode()}s`}
           </button>
         </li>
         <li>
-          <button id="add-quote" className="Action" onClick={this.addQuote}>
+          <button id="add" className="Action" onClick={this.add}>
             <div>
               <AddIcon className="Action-icon" />
-              <span className="Action-text">add quote</span>
+              <span className="Action-text">{`add ${this.getMode()}`}</span>
             </div>
           </button>
         </li>

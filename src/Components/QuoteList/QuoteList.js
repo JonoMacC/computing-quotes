@@ -1,12 +1,13 @@
 import React from "react";
 import Quote from "../Quote/Quote";
+import Author from "../Author/Author";
 
 class QuoteList extends React.Component {
-  render() {
-    if (this.props.quotes.length > 0) {
+  renderQuotes() {
+    if (this.props.results.length > 0) {
       return (
         <ul className="List-container">
-          {this.props.quotes.map((quote) => {
+          {this.props.results.map((quote) => {
             return (
               <Quote
                 key={quote.id}
@@ -18,10 +19,43 @@ class QuoteList extends React.Component {
           })}
         </ul>
       );
-    } else if (!this.props.show) {
-      return null;
     } else {
       return <p className="List-container">Your request returned no quotes.</p>;
+    }
+  }
+
+  renderAuthors() {
+    if (this.props.results.length > 0) {
+      return (
+        <ul className="List-container">
+          {this.props.results.map((author) => {
+            return (
+              <Author
+                key={author.id}
+                name={author.name}
+                dob={author.dob}
+                dod={author.dod}
+                imgSrc={author.img}
+                bio={author.bio}
+              />
+            );
+          })}
+        </ul>
+      );
+    } else {
+      return (
+        <p className="List-container">Your request returned no authors.</p>
+      );
+    }
+  }
+
+  render() {
+    if (!this.props.show) {
+      return null;
+    } else if (this.props.quotesMode) {
+      return this.renderQuotes();
+    } else {
+      return this.renderAuthors();
     }
   }
 }

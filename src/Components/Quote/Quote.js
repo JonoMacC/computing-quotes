@@ -28,7 +28,7 @@ class Quote extends React.Component {
 
   render() {
     return (
-      <li className="Quote">
+      <li className="ListItem">
         <p>{this.props.text}</p>
         <ul className="Attribution">
           <li>{this.state.personName}</li>

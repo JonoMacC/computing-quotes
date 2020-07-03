@@ -1,0 +1,60 @@
+figure {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-container {
+  width: 171px;
+  height: 128px;
+  overflow: hidden;
+  border-radius: 32px;
+  margin: 0 0 2rem 0;
+  z-index: 2;
+}
+
+img {
+  object-fit: cover;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.2);
+}
+
+figcaption {
+  width: 100%;
+}
+
+figcaption p {
+  margin: 0;
+}
+
+.bio {
+  margin: 2rem 0 0 0;
+}
+
+.grayBox {
+  background: #aaa;
+  width: 100%;
+  height: 100%;
+}
+
+@media all and (min-width: 415px) {
+  figure {
+    margin-bottom: 2rem;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .img-container {
+    margin: 0 2rem 0 0;
+  }
+
+  figcaption {
+    width: auto;
+  }
+}

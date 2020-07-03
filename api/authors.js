@@ -16,7 +16,7 @@ authorsRouter.get("/random", (req, res) => {
 // if name is defined, return the author
 // otherwise return all authors
 authorsRouter.get("/", (req, res) => {
-  if (req.query.name !== undefined) {
+  if (req.query.name !== undefined && req.query.name.length > 0) {
     const authorByName = authors.filter(
       (author) => author.name === req.query.name
     );

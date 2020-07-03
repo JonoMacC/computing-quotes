@@ -15,6 +15,14 @@ class SearchBar extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
+  // Redo search if there is a term in the search field and
+  // the user has changed modes
+  componentDidUpdate(prevProps) {
+    if (this.props.quotesMode !== prevProps.quotesMode && this.state.term) {
+      this.props.onSearch(this.state.term);
+    }
+  }
+
   search() {
     this.props.onSearch(this.state.term);
   }
@@ -34,6 +42,14 @@ class SearchBar extends React.Component {
     }
   }
 
+  renderPlaceholder() {
+    if (this.props.quotesMode) {
+      return "Search by author";
+    } else {
+      return "Search authors";
+    }
+  }
+
   render() {
     return (
       <div className="Control-bar">
@@ -42,7 +58,7 @@ class SearchBar extends React.Component {
             name="author"
             id="author"
             aria-label="Author name"
-            placeholder="Search by author"
+            placeholder={this.renderPlaceholder()}
             onChange={this.handleTermChange}
             onKeyDown={this.handleKeyDown}
           />

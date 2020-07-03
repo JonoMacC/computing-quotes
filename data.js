@@ -29,6 +29,7 @@ const authors = [
     name: "Ada Lovelace",
     dob: 1815,
     dod: 1852,
+    img: "/assets/ada-lovelace.jpg",
     bio:
       "Augusta Ada King, Countess of Lovelace, was an English mathematician and writer, chiefly known for her work on Charles Babbage's proposed mechanical general-purpose computer, the Analytical Engine. She was the first to recognise that the machine had applications beyond pure calculation, and published the first algorithm intended to be carried out by such a machine.",
   },
@@ -37,6 +38,7 @@ const authors = [
     name: "Alan Turing",
     dob: 1912,
     dod: 1954,
+    img: "/assets/alan-turing.jpg",
     bio:
       "Alan Turing was an English mathematician, computer scientist, logician, cryptanalyst, philosopher, and theoretical biologist. Turing was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general-purpose computer. Turing is widely considered to be the father of theoretical computer science and artificial intelligence.",
   },
@@ -104,6 +106,7 @@ const authors = [
   {
     id: 15,
     name: "Ellen Ullman",
+    img: "/assets/ellen-ullman.jpg",
     bio:
       "Ellen Ullman is an American computer programmer and author. She has written novels as well as articles for various publications, including Harper's Magazine, Wired, The New York Times and Salon.",
   },
