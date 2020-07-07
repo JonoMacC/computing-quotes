@@ -21,6 +21,7 @@ const authors = [
     name: "Charles Babbage",
     dob: 1791,
     dod: 1871,
+    img: "/assets/charles-babbage.jpg",
     bio:
       "Charles Babbage was an English polymath. A mathematician, philosopher, inventor and mechanical engineer, Babbage originated the concept of a digital programmable computer.",
   },

@@ -5,7 +5,7 @@ import SegmentedControl from "../SegmentedControl/SegmentedControl";
 import SearchBar from "../SearchBar/SearchBar";
 import ActionBar from "../ActionBar/ActionBar";
 import QuoteList from "../QuoteList/QuoteList";
-import QuoteForm from "../QuoteForm/QuoteForm";
+import AddForm from "../AddForm/AddForm";
 import Footer from "../Footer/Footer";
 
 import Quoted from "../../util/Quoted";
@@ -36,9 +36,8 @@ class App extends React.Component {
   }
 
   // hide the modal form from view
-  // set the "newForm" state to true so the form is cleared
   hideForm() {
-    return this.setState({ showForm: false, newForm: true });
+    return this.setState({ showForm: false });
   }
 
   // search for a quote by the name of the author
@@ -117,10 +116,22 @@ class App extends React.Component {
     }
   }
 
+  getFormType() {
+    if (this.state.quotesMode) {
+      return "quote";
+    } else {
+      return "author";
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <QuoteForm show={this.state.showForm} onClose={this.hideForm} />
+        <AddForm
+          show={this.state.showForm}
+          onClose={this.hideForm}
+          formObj={this.getFormType()}
+        />
         <SegmentedControl
           quotesMode={this.state.quotesMode}
           onToggle={this.changeMode}

@@ -65,8 +65,10 @@ const Quoted = {
       });
   },
 
-  addQuote(quote, person, year) {
-    return fetch(`/api/quotes?quote=${quote}&person=${person}&year=${year}`, {
+  addQuote(quote, person, year = "") {
+    let inputYear = "";
+    if (year) inputYear = `&year=${year}`;
+    return fetch(`/api/quotes?quote=${quote}&person=${person}${inputYear}`, {
       method: "POST",
     })
       .then((response) => {
@@ -124,6 +126,29 @@ const Quoted = {
         } else {
           return [];
         }
+      });
+  },
+
+  addAuthor(name, bio = "", dob = "", dod = "") {
+    let inputBio = "",
+      inputDob = "",
+      inputDod = "";
+    if (bio) inputBio = `&bio=${bio}`;
+    if (dob) inputDob = `&dob=${dob}`;
+    if (dod) inputDod = `&dod=${dod}`;
+
+    return fetch(`/api/authors?name=${name}${inputBio}${inputDob}${inputDod}`, {
+      method: "POST",
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          handleError(response);
+        }
+      })
+      .then((response) => {
+        return response.author;
       });
   },
 };

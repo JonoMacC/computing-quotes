@@ -5,6 +5,7 @@ import { ReactComponent as CheckIcon } from "../Icons/check.svg";
 import "./QuoteForm.css";
 import Quoted from "../../util/Quoted";
 import SubmitButton from "./SubmitButton";
+import InputField from "./InputField";
 
 const ErrorMessage = (isError, message) => {
   if (!isError) {
@@ -69,7 +70,7 @@ class QuoteForm extends React.Component {
     const author = this.state.author;
     const year = this.state.year;
 
-    Quoted.add(quoteText, author, year)
+    Quoted.addQuote(quoteText, author, year)
       .then((quote) => {
         return this.setState({ submitted: true, quote: quote });
       })
@@ -96,49 +97,29 @@ class QuoteForm extends React.Component {
     } else {
       return (
         <ul className="form-fields">
-          <li id="quote-text">
-            <label htmlFor="quote" className="label">
-              Quote
-            </label>
-            <textarea
-              id="quote"
-              name="quote"
-              rows="10"
-              value={this.state.quoteText}
-              onChange={this.handleTextChange}
-            ></textarea>
-          </li>
+          <InputField
+            field="quote-text"
+            label="quote"
+            inputType="textarea"
+            inputValue={this.state.quoteText}
+            onChange={this.handleTextChange}
+          />
           <li id="quote-attribution">
             <ul className="list-horiz">
-              <li id="author-text">
-                <label htmlFor="person-choice" className="label">
-                  Author
-                </label>
-                <input
-                  list="person"
-                  id="person-choice"
-                  name="person-choice"
-                  className="small"
-                  value={this.state.author}
-                  onChange={this.handleAuthorChange}
-                />
-                <datalist id="person">
-                  <option value="Ellen Ullman"> </option>
-                  <option value="Alan Turing"> </option>
-                </datalist>
-              </li>
-              <li id="year-text">
-                <label htmlFor="year" className="label">
-                  Year
-                </label>
-                <input
-                  id="year"
-                  name="year"
-                  className="small"
-                  value={this.state.year}
-                  onChange={this.handleYearChange}
-                />
-              </li>
+              <InputField
+                field="author-text"
+                label="authors"
+                inputType="datalist"
+                value={this.state.author}
+                onChange={this.handleAuthorChange}
+              />
+              <InputField
+                field="year-text"
+                label="year"
+                inputType="input"
+                value={this.state.year}
+                onChange={this.handleYearChange}
+              />
             </ul>
           </li>
           <li>{ErrorMessage(this.state.formError, this.state.errorMessage)}</li>

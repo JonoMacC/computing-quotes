@@ -1,0 +1,97 @@
+/* Add Quote Form */
+.modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 20;
+  background: rgba(38, 41, 42, 0.4);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  backdrop-filter: blur(12px) saturate(180%);
+}
+
+.form-container {
+  max-width: 422px;
+  margin: auto 0 0 0;
+  width: 100%;
+  background: var(--surface-dark);
+  border: 1px solid var(--white-20);
+}
+
+.form-title {
+  font-size: 1.25rem;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 672px;
+  height: 100%;
+  padding: 1rem;
+  border: none;
+}
+
+.form-body > *,
+.form-fields > li {
+  margin-bottom: 2rem;
+}
+
+.form-body > :last-child {
+  margin: auto 0 0 0;
+}
+
+.form-body p {
+  text-align: center;
+}
+
+.name {
+  width: 12.75rem;
+}
+
+.year {
+  width: 8rem;
+}
+
+/* Success */
+#success {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 1px solid var(--white-87);
+  background: var(--white-20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 88px auto 112px auto;
+}
+
+#checkmark {
+  width: 6rem;
+  height: 6rem;
+}
+
+@media all and (min-width: 422px) {
+  .modal {
+    align-items: center;
+  }
+
+  .form-container {
+    margin: auto;
+  }
+}
+
+/* Tablet & Larger */
+@media all and (min-width: 736px) {
+  .form-body {
+    padding: 2rem;
+    min-height: 590px;
+  }
+
+  #success {
+    margin: 44px auto 76px auto;
+  }
+}
