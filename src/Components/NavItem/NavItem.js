@@ -21,31 +21,24 @@ class NavItem extends React.Component {
     }
   }
 
-  render() {
+  getSelected() {
     if (this.props.isSelected) {
-      return (
-        <li
-          className="NavItem selected"
-          tabIndex={0}
-          onClick={this.handleClick}
-          onKeyDown={this.handleKeyDown}
-        >
-          {this.props.name}
-          <span className="selector"></span>
-        </li>
-      );
-    } else {
-      return (
-        <li
-          className="NavItem"
-          onClick={this.handleClick}
-          tabIndex={0}
-          onKeyDown={this.handleKeyDown}
-        >
-          {this.props.name}
-        </li>
-      );
+      return "selected";
     }
+    return "";
+  }
+
+  render() {
+    return (
+      <li
+        className={`NavItem ${this.getSelected()}`}
+        tabIndex={0}
+        onClick={this.handleClick}
+        onKeyDown={this.handleKeyDown}
+      >
+        {this.props.name}
+      </li>
+    );
   }
 }
 

@@ -22,6 +22,13 @@ class SegmentedControl extends React.Component {
     }
   }
 
+  getState() {
+    if (!this.props.quotesMode) {
+      return "second";
+    }
+    return "";
+  }
+
   render() {
     return (
       <nav className="SegmentedControl">
@@ -31,6 +38,7 @@ class SegmentedControl extends React.Component {
             isSelected={this.props.quotesMode}
             onClick={this.enableQuotes}
           />
+          <span className={`selector ${this.getState()}`}></span>
           <NavItem
             name="Authors"
             isSelected={!this.props.quotesMode}

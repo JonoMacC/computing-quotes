@@ -5,10 +5,11 @@
   display: flex;
   align-items: center;
   padding: 0.625rem;
+  justify-content: center;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
 }
 
-.selected {
+.NavItem.selected {
   color: var(--cyberpunk-green);
 }
