@@ -18,9 +18,9 @@
     "serverless-http": "^2.5.0"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=dev npm-run-all --parallel start:app start:server",
+    "start": "cross-env NODE_ENV=dev npm-run-all --parallel start:**",
     "start:app": "react-scripts start",
-    "start:lambda": "netlify-lambda serve src/lambda",
+    "start:server": "netlify-lambda serve src/lambda",
     "build": "npm-run-all --parallel build:**",
     "build:app": "react-scripts build",
     "build:lambda": "netlify-lambda build src/lambda",
@@ -43,15 +43,15 @@
     ]
   },
   "devDependencies": {
-    "netlify-lambda": "^1.6.3",
-    "npm-run-all": "^4.1.5",
-    "parcel-bundler": "^1.9.4",
     "babel-cli": "^6.26.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "cross-env": "^5.2.0",
-    "mini-css-extract-plugin": "^0.4.1"
+    "cross-env": "^5.2.1",
+    "mini-css-extract-plugin": "^0.4.1",
+    "netlify-lambda": "^1.6.3",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.9.4"
   },
   "proxy": {
     "/.netlify/functions": {

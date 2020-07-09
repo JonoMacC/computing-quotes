@@ -1,7 +1,7 @@
 const express = require("express");
 
-const { authors } = require("../data");
-const { getRandomElement } = require("../src/util/utils");
+const { authors } = require("../../data");
+const { getRandomElement } = require("../util/utils");
 
 const authorsRouter = express.Router();
 

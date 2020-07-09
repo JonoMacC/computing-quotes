@@ -1,7 +1,7 @@
 const express = require("express");
 
-const { quotes, authors } = require("../data");
-const { getRandomElement } = require("../src/util/utils");
+const { quotes, authors } = require("../../data");
+const { getRandomElement } = require("../util/utils");
 
 const quotesRouter = express.Router();
 

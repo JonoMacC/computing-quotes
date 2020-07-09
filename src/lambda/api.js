@@ -12,11 +12,11 @@ const routerBasePath =
   process.env.NODE_ENV === "dev" ? `/api` : `/.netlify/functions/api/`;
 
 // Import and mount the authorsRouter
-// const authorsRouter = require("../../api/authors.js");
+// const authorsRouter = require("../api/authors.js");
 // app.use("/api/authors", authorsRouter);
 
 // Import and mount the quotesRouter
-// const quotesRouter = require("../../api/quotes.js");
+// const quotesRouter = require("../api/quotes.js");
 
 // gzip responses
 router.use(compression());
