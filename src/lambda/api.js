@@ -8,8 +8,6 @@ import serverless from "serverless-http";
 
 const app = express();
 const router = express.Router();
-const routerBasePath =
-  process.env.NODE_ENV === "dev" ? `/api` : `/.netlify/functions/api/`;
 
 // Import and mount the authorsRouter
 // const authorsRouter = require("../api/authors.js");
@@ -29,7 +27,7 @@ router.get("/", function (req, res) {
 app.use(morgan("dev"));
 
 // Setup routes
-app.use(routerBasePath, router);
+app.use("/.netlify/functions/api/", router);
 
 // Mount express middleware
 router.use(cors());

@@ -9,6 +9,3 @@
   # status = 200
   # force = true
   # headers = {X-From = "Netlify"}
-
-[dev]
-  framework = "create-react-app"
