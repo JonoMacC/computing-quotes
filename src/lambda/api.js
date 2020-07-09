@@ -1,11 +1,10 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const morgan = require("morgan");
-const compression = require("compression");
-const errorhandler = require("errorhandler");
+import express from "express";
+import cors from "cors";
+import morgan from "morgan";
+import bodyParser from "body-parser";
+import compression from "compression";
 
-const serverless = require("serverless-http");
+import serverless from "serverless-http";
 
 const app = express();
 const router = express.Router();
@@ -28,13 +27,12 @@ router.get("/", function (req, res) {
 app.use(morgan("dev"));
 
 // Setup routes
-app.use("/.netlify/functions/api", router);
+app.use("/.netlify/functions/api/", router);
 
 // Mount express middleware
 router.use(cors());
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
-router.use(errorhandler());
 
 // module.exports = app;
 exports.handler = serverless(app);
