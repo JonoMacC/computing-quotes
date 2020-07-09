@@ -16,10 +16,10 @@ app.use(errorhandler());
 
 // Import and mount the quotesRouter
 const quotesRouter = require("../../api/quotes.js");
-app.use("/.netlify/functions/api/quotes", quotesRouter);
+app.use("/api/quotes", quotesRouter);
 
 // Import and mount the authorsRouter
 const authorsRouter = require("../../api/authors.js");
-app.use("/.netlify/functions/api/authors", authorsRouter);
+app.use("/api/authors", authorsRouter);
 
 module.exports.handler = serverless(app);
