@@ -30,14 +30,14 @@ class NavItem extends React.Component {
 
   render() {
     return (
-      <li
+      <div
         className={`NavItem ${this.getSelected()}`}
         tabIndex={0}
         onClick={this.handleClick}
         onKeyDown={this.handleKeyDown}
       >
         {this.props.name}
-      </li>
+      </div>
     );
   }
 }

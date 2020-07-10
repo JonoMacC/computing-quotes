@@ -32,19 +32,17 @@ class SegmentedControl extends React.Component {
   render() {
     return (
       <nav className="SegmentedControl">
-        <ul>
-          <NavItem
-            name="Quotes"
-            isSelected={this.props.quotesMode}
-            onClick={this.enableQuotes}
-          />
-          <span className={`selector ${this.getState()}`}></span>
-          <NavItem
-            name="Authors"
-            isSelected={!this.props.quotesMode}
-            onClick={this.enableAuthors}
-          />
-        </ul>
+        <NavItem
+          name="Quotes"
+          isSelected={this.props.quotesMode}
+          onClick={this.enableQuotes}
+        />
+        <span className={`selector ${this.getState()}`}></span>
+        <NavItem
+          name="Authors"
+          isSelected={!this.props.quotesMode}
+          onClick={this.enableAuthors}
+        />
       </nav>
     );
   }

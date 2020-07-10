@@ -7,16 +7,19 @@ class ActionBar extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      mode: "quote",
+    };
+
     this.fetchRandom = this.fetchRandom.bind(this);
     this.fetchAll = this.fetchAll.bind(this);
     this.add = this.add.bind(this);
   }
 
-  getMode() {
-    if (this.props.quotesMode) {
-      return "quote";
-    } else {
-      return "author";
+  componentDidUpdate(prevProps) {
+    if (this.props.quotesMode !== prevProps.quotesMode) {
+      const mode = this.props.quotesMode ? "quote" : "author";
+      this.setState({ mode: mode });
     }
   }
 
@@ -42,8 +45,11 @@ class ActionBar extends React.Component {
             onClick={this.fetchRandom}
           >
             <div>
-              <RandomIcon className="Action-icon" />
-              <span className="Action-text">{`random ${this.getMode()}`}</span>
+              <RandomIcon
+                className="Action-icon"
+                aria-label={`random ${this.state.mode}`}
+              />
+              <span className="Action-text">{`random ${this.state.mode}`}</span>
             </div>
           </button>
         </li>
@@ -53,14 +59,17 @@ class ActionBar extends React.Component {
             className="Action wide"
             onClick={this.fetchAll}
           >
-            {`all ${this.getMode()}s`}
+            {`all ${this.state.mode}s`}
           </button>
         </li>
         <li>
           <button id="add" className="Action" onClick={this.add}>
             <div>
-              <AddIcon className="Action-icon" />
-              <span className="Action-text">{`add ${this.getMode()}`}</span>
+              <AddIcon
+                className="Action-icon"
+                aria-label={`add ${this.state.mode}`}
+              />
+              <span className="Action-text">{`add ${this.state.mode}`}</span>
             </div>
           </button>
         </li>

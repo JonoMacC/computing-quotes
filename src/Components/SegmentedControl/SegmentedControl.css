@@ -1,19 +1,16 @@
 .SegmentedControl {
   width: 12.375rem;
   margin: 1rem auto;
-}
-
-.SegmentedControl ul {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
 }
 
-.SegmentedControl ul :first-child {
+.SegmentedControl :first-child {
   width: 4.5rem;
 }
 
-.SegmentedControl ul :last-child {
+.SegmentedControl :last-child {
   width: 5rem;
   margin-left: 2.875rem;
 }
