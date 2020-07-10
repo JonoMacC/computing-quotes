@@ -22,6 +22,16 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+
+    <!-- Preload resources for performance, not supported in Firefox -->
+    <link rel="preload" as="style" href="reset.css" />
+    <link rel="preload" as="style" href="styles.css" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap"
+    />
+
     <!-- Link to reset.css, clear out browser defaults -->
     <link rel="stylesheet" href="reset.css" type="text/css" />
 
