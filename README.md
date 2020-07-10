@@ -20,11 +20,10 @@ See the master branch for a conventional version of the app intended for server-
 
 ## Local Development
 
-Clone the repository and go to the project directory in your terminal `cd /computing-quotes`
-Install all dependencies by executing `yarn` in your terminal
-You will need to have Netlify CLI installed `npm install netlify-cli -g`
-You will need to login on first time use `netlify login`
-You may need to link to your Netlify site - the live version of this repository on your account (but maybe not?) `netlify link` and follow the prompts for next steps
-
-Run `ntl dev` (ntl is short for netlify) to start the app.
-You can view the app by navigating to http://localhost:3000/ in your browser.
+- Clone the repository and go to the project directory in your terminal `cd /computing-quotes`
+- Install all dependencies by executing `yarn` in your terminal
+- You will need to have Netlify CLI installed `npm install netlify-cli -g`
+- You will need to login on first time use `netlify login`
+- You may need to link to your Netlify site - the live version of this repository on your account (but maybe not?) `netlify link` and follow the prompts for next steps
+- Run `ntl dev` (ntl is short for netlify) to start the app.
+- You can view the app by navigating to http://localhost:3000/ in your browser.
