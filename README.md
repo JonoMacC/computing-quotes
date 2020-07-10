@@ -2,6 +2,8 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6a5cc58c-c0ff-4663-aa3c-dc5c98342570/deploy-status)](https://app.netlify.com/sites/quotion/deploys)
 
+View Live Site: [Quotion](https://quotion.netlify.app/)
+
 Simple API and web interface for quotes about computing
 
 A non-persistent API to CRUD (Create, Read, Update, Delete) quotes and their authors and a responsive web interface for interacting with the API.
@@ -11,6 +13,7 @@ React Front-End and Express Back-End.
 ## About
 
 This project was bootstrapped with Create-React-App: [Create React App Repo](https://github.com/facebook/create-react-app)
+
 It uses serverless-http to deploy an Express backend on a serverless platform like Netlify: [Serverless HTTP Repo](https://github.com/dougmoscrop/serverless-http)
 
 See the master branch for a conventional version of the app intended for server-side deployment.
