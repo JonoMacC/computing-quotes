@@ -16,7 +16,7 @@ This project was bootstrapped with Create-React-App: [Create React App Repo](htt
 
 It uses serverless-http to deploy an Express backend on a serverless platform like Netlify: [Serverless HTTP Repo](https://github.com/dougmoscrop/serverless-http)
 
-See the master branch for a conventional version of the app intended for server-side deployment.
+See the **master** branch for a conventional version of the app intended for server-side deployment.
 
 ## Local Development
 
