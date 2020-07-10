@@ -4,7 +4,9 @@ const handleError = (response) => {
   );
 };
 
-const routerBasePath = `/.netlify/functions/api`;
+const routerBasePath = process.env.REACT_APP_LOCAL
+  ? `/api`
+  : `/.netlify/functions/api`;
 
 const Quoted = {
   getAuthorNameById(personId) {
