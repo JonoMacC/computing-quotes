@@ -20,12 +20,8 @@ The deployed site is serverless. Switch to the netlifyfn branch to view the code
 
 # Local Development
 
-Clone the repository and go to the project directory in your terminal `cd /computing-quotes`.
-
-Install all dependencies by executing `yarn` in your terminal.
-
-Run `node server` in the terminal.
-
-Open another terminal and run `yarn start` to start the app.
-
-View the site by navigating to **localhost:3000** in your web browser.
+- Clone the repository and go to the project directory in your terminal `cd /computing-quotes`
+- Install all dependencies by executing `yarn` in your terminal
+- Run `node server` in the terminal
+- Open another terminal and run `yarn start` to start the app
+- View the site by navigating to **localhost:3000** in your web browser
