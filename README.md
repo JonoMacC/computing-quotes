@@ -16,7 +16,7 @@ Switch to the netlifyfn branch to see a quick conversion for serverless deployme
 
 View Live Site: [Quotion](https://quotion.netlify.app/)
 
-The deployed site is serverless. Switch to the netlifyfn branch to view the code.
+The deployed site is serverless. Switch to the **netlifyfn** branch to view the code.
 
 # Local Development
 
