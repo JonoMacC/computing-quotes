@@ -17,11 +17,11 @@ app.use(cors());
 app.use(errorhandler());
 
 // Import and mount the quotesRouter
-const quotesRouter = require("./api/quotes.js");
+const quotesRouter = require("./src/api/quotes.js");
 app.use("/api/quotes", quotesRouter);
 
 // Import and mount the authorsRouter
-const authorsRouter = require("./api/authors.js");
+const authorsRouter = require("./src/api/authors.js");
 app.use("/api/authors", authorsRouter);
 
 // Start server

@@ -4,9 +4,13 @@ const handleError = (response) => {
   );
 };
 
+const routerBasePath = process.env.REACT_APP_LOCAL
+  ? `/api`
+  : `/.netlify/functions/api`;
+
 const Quoted = {
   getAuthorNameById(personId) {
-    return fetch(`/api/authors/${personId}`)
+    return fetch(`${routerBasePath}/authors/${personId}`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -20,7 +24,7 @@ const Quoted = {
   },
 
   allQuotes() {
-    return fetch("/api/quotes")
+    return fetch(`${routerBasePath}/quotes`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -34,7 +38,7 @@ const Quoted = {
   },
 
   randomQuote() {
-    return fetch("/api/quotes/random")
+    return fetch(`${routerBasePath}/quotes/random`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -48,7 +52,7 @@ const Quoted = {
   },
 
   searchQuotes(term) {
-    return fetch(`/api/quotes?person=${term}`)
+    return fetch(`${routerBasePath}/quotes?person=${term}`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -68,9 +72,12 @@ const Quoted = {
   addQuote(quote, person, year = "") {
     let inputYear = "";
     if (year) inputYear = `&year=${year}`;
-    return fetch(`/api/quotes?quote=${quote}&person=${person}${inputYear}`, {
-      method: "POST",
-    })
+    return fetch(
+      `${routerBasePath}/quotes?quote=${quote}&person=${person}${inputYear}`,
+      {
+        method: "POST",
+      }
+    )
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -84,7 +91,7 @@ const Quoted = {
   },
 
   allAuthors() {
-    return fetch("/api/authors")
+    return fetch(`${routerBasePath}/authors`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -98,7 +105,7 @@ const Quoted = {
   },
 
   randomAuthor() {
-    return fetch("/api/authors/random")
+    return fetch(`${routerBasePath}/authors/random`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -112,7 +119,7 @@ const Quoted = {
   },
 
   searchAuthors(term) {
-    return fetch(`/api/authors?name=${term}`)
+    return fetch(`${routerBasePath}/authors?name=${term}`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -137,9 +144,12 @@ const Quoted = {
     if (dob) inputDob = `&dob=${dob}`;
     if (dod) inputDod = `&dod=${dod}`;
 
-    return fetch(`/api/authors?name=${name}${inputBio}${inputDob}${inputDod}`, {
-      method: "POST",
-    })
+    return fetch(
+      `${routerBasePath}/authors?name=${name}${inputBio}${inputDob}${inputDod}`,
+      {
+        method: "POST",
+      }
+    )
       .then((response) => {
         if (response.ok) {
           return response.json();
